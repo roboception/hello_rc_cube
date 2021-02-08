@@ -91,8 +91,10 @@
 <body onload="checkRefresh();">
   <img alt="Roboception Logo" src="logo_roboception.svg">
   <div class="info">
+    <p><span>rc_cube&nbsp;hostname:</span> <span id="rc_cube_hostname"></span></p>
+    <p><span>rc_cube&nbsp;external&nbsp;IP:</span> <span id="external0_ip"</span></p>
     <p><span>Container&nbsp;address:</span> <span>server_address</span></p>
-    <p><span>Container&nbsp;id:</span> <span>server_hostname</span></p>
+    <p><span>Container&nbsp;name:</span> <span>server_hostname</span></p>
     <p class="smaller"><span>Date:</span> <span>server_date</span></p>
   </div>
   <div class="check"><input type="checkbox" id="check" onchange="changeCookie()"> Auto Refresh</div>
@@ -101,6 +103,20 @@
       Request ID: request_id
     </div>
   </div>
+  <script>
+    var hostname = document.getElementById('rc_cube_hostname');
+    var ip = document.getElementById('external0_ip');
+    fetch(origin+'/api/v1/system')
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data);
+        hostname.innerText = `${data.hostname}`;
+        ip.innerText = `${data.network.ip_address}`;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  </script>
 </body>
 
 </html>
