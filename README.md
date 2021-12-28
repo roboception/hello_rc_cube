@@ -1,7 +1,8 @@
 hello_rc_cube
 =============
 
-Simple docker container as rc_cube userspace example based on [nginx-hello](https://github.com/nginxinc/NGINX-Demos/tree/master/nginx-hello).
+Simple docker container as [rc_cube UserSpace](https://doc.rc-cube.com/latest/en/userspace.html)
+example based on [nginx-hello](https://github.com/nginxinc/NGINX-Demos/tree/master/nginx-hello).
 
 The image is available on Docker Hub: https://hub.docker.com/r/roboception/hello_rc_cube
 
