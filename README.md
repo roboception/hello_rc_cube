@@ -12,4 +12,6 @@ To access the web page, the port 80 in the container needs to be mapped to any f
 This can either be a manually chosen fixed port or an automatically published random port.
 The image has the label `com.roboception.app.http`, which will tell the rc_cube that the protocol for the mapped host port is http.
 
+A [Docker healthcheck](https://docs.docker.com/engine/reference/builder/#healthcheck) is also set, so the health status will also be shown.
+
 ![hello](hello.png)
